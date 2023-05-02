@@ -24,5 +24,25 @@ namespace HRLibrary
         //ToString()
         public override string ToString() =>
             $"{base.ToString()}\nHours Worked: {HoursWorked:f2}\nHourly Wage: {HourlyWage:c}";
+
+        public override decimal GetPayCheckAmount()
+        {
+            //throw new NotImplementedException();
+            //local variable to represent the paycheck
+            decimal paycheck;
+            //assume that HourlyEmployees are paid 1.5 for every hour over 40, and they are paid weekly.
+            if (HoursWorked <=40) 
+            {
+                paycheck = HourlyWage * HoursWorked;
+            }
+            else
+            {
+                //they earned OT
+                decimal overtime = HoursWorked - 40;//subtract 40 to find total amount of EXTRA hours
+                paycheck = (40 * HourlyWage) + (overtime * HourlyWage * 1.5m);
+            }
+            return paycheck;
+        }
+
     }
 }
