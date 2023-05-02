@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Block1", "Block1\Block1.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRLibrary", "HRLibrary\HRLibrary.csproj", "{31507CD9-6486-4D67-8703-1AE383A43843}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Block1LabChallenge", "Block1LabChallenge\Block1LabChallenge.csproj", "{FA1C1AAE-6D34-4284-A760-8AACD002C09C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{31507CD9-6486-4D67-8703-1AE383A43843}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31507CD9-6486-4D67-8703-1AE383A43843}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31507CD9-6486-4D67-8703-1AE383A43843}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FA1C1AAE-6D34-4284-A760-8AACD002C09C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA1C1AAE-6D34-4284-A760-8AACD002C09C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA1C1AAE-6D34-4284-A760-8AACD002C09C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA1C1AAE-6D34-4284-A760-8AACD002C09C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
