@@ -1,4 +1,5 @@
-﻿using HRLibrary;
+﻿using ABCPayroll;
+using HRLibrary;
 
 namespace Block1
 {
@@ -7,7 +8,7 @@ namespace Block1
         static void Main(string[] args)
         {
             //Build an object of the Person class and output to the console
-            //Added areference using the Intellisense Quick Actions
+            //Added a reference using the Intellisense Quick Actions
             //Access the intellisense quick actions (light bulbs and screwdrivers) using CTRL +.
             //Person p1 = new Person("Cushman", "Armitage", new DateTime(1925, 1, 1));
             //Console.WriteLine("Create and output a Person object:\n " + p1);
@@ -27,6 +28,40 @@ namespace Block1
                 new DateTime(2005, 3, 24), true, 79900, 25000);
 
             Console.WriteLine("\n\nManager:\n" + m1);
+            Console.WriteLine("\n\n********** Paper Checks **********\n");
+            //PayrollManager pm = new PayrollManager();
+            PayrollManager.ProcessPaycheck(he1);
+            PayrollManager.ProcessPaycheck(se1);
+            PayrollManager.ProcessPaycheck(m1);
+            Console.WriteLine("\n\n********** Direct Deposit **********\n");
+            PayrollManager.DoDirectDeposit(he1);
+            PayrollManager.DoDirectDeposit(se1);
+            PayrollManager.DoDirectDeposit(m1);
+
+            List<Employee> employees = new() { he1, se1, m1 };
+            Console.WriteLine("\n\n***************** Employees ******************\n");
+            foreach (Employee e in employees)
+            {
+                if (e.IsDirectDeposit)//e.IsDirectDeposit == true
+                {
+                    PayrollManager.DoDirectDeposit(e);
+                }
+                else
+                {
+                    PayrollManager.ProcessPaycheck(e);
+                }
+                Console.WriteLine(" *** ");
+            }
+            //How many different implementations do we have for the manager object?
+            //Manager
+            //SalariedEmployee
+            //Employee
+            //Person
+            //Object
+            //IPayable
+            //IDirectDepositable
+            //Polymorphism! (not one of the types)
+
         }
     }
 }

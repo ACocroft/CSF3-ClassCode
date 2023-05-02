@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ABCPayroll;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,11 @@ using System.Threading.Tasks;
 namespace HRLibrary
 {
     //make it public
-    public abstract class Employee : Person
+    //This is a public inheritance only class called employee that extends the person class and
+    //implements the IPayable and IDirectDepositable interfaces.
+    //You COULD remove the IPayable interface here, because IDirectDepositable inherits the requirements
+    //of IPayable.
+    public abstract class Employee : Person, IPayable, IDirectDepositable
     {
         //No fields, just business rules
         public int ID { get; /*set;*/ }//setter removed to make it readonly. It can now only be set in the ctor.
@@ -36,5 +41,22 @@ namespace HRLibrary
                    $"Direct Deposit: {(IsDirectDeposit ? "Yes" : "No")}";
         }
 
+        public string GetFullName()
+        {
+            //throw new NotImplementedException();
+            return $"{FirstName} {LastName}";
+        }
+        //We don't have the necessary information to implement this method at this level. So,
+        //we will pass it off to the child classes.
+        public abstract decimal GetPayCheckAmount();
+       
+        public string GetBankingInfo()
+        {
+            //probably a whole other class library to handle banking info.
+            //REQUIREMENTS GATHERING: Witholding, tax, 401k, split-disbursement, etc.
+
+            return "Bank of 'Merica 000123 111222333444";
+            //If this were production code, it wouldn't be hard-coded.
+        }
     }
 }

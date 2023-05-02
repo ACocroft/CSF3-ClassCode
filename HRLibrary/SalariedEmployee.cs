@@ -24,5 +24,18 @@ namespace HRLibrary
         {
             return base.ToString() + $"\nYearly Salary: {YearlySalary:c}";
         }
+        public override decimal GetPayCheckAmount()
+        {
+            //throw new NotImplementedException();
+            //weekly
+            //bi weekly
+            //bi-monthly/semi-monthly
+            //monthly
+            //annually
+            //REQUIREMENTS GATHERING! It's extremely important.
+
+            //Bi-Weekly - 26 pay periods
+            return YearlySalary / 26;
+        }
     }
 }

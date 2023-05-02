@@ -18,6 +18,16 @@ namespace HRLibrary
         {
             return base.ToString() + $"\nBonus: {YearlyBonus:c}";
         }
+
+        //By default, we inherit the GetPaycheckAmount functionality from SalariedEmployee, so we don't get
+        //a not implemented error.
+        public override decimal GetPayCheckAmount()
+        {
+            //return base.GetPayCheckAmount();
+            //Bonuses can be distributed a variety of ways. GATHER REQUIREMENTS BY ASKING.
+            //We're saying managers are paid monthly, and their bonuses are distributed evenly throughout the year.
+            return (YearlySalary + YearlyBonus) / 12;
+        }
     }
     //cannae derive from sealed types
 }
