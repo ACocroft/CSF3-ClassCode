@@ -24,5 +24,6 @@ namespace InventoryLibrary
             return Price * (1 - .15m);
         }
 
+        public override int Quantity => Qty - 30;
     }
 }
