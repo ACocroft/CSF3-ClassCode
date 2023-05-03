@@ -3,6 +3,7 @@
     public interface IInventoriable
     {
         decimal GetSalePrice();
-        
+
+        int Quantity { get; }
     }
 }
