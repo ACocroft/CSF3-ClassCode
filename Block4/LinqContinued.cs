@@ -82,6 +82,46 @@ namespace Block4
 
             var expensiveKW = (from p in products orderby p.Price descending select p).Take(2);
             foreach (var item in expensiveKW) Console.WriteLine(item);
+
+            Console.Clear();
+
+            //true ^ true == false;
+            //true ^ false == true;
+            //false ^ true == true;
+            //false ^ false == false;
+
+            //1 0 0 1 == 0
+            //1 0 1 0 == 10
+            //0 0 1 1 == 9 ^ 10 == 3
+
+            //REcusion - Call a method inside itself
+            Counting(10);
+            DateTime now = DateTime.Now;
+            Console.WriteLine(Fibonacci(46));
+            DateTime finish = DateTime.Now;
+            TimeSpan runTime = finish.Subtract(now);
+            Console.WriteLine($"{runTime.TotalMilliseconds}");
+        }
+        private static int Counting(int n)
+        {
+            Console.WriteLine(n);
+            if (n > 0)
+            {
+                Counting(n - 1);
+            }
+            return 0;
+        }
+
+        private static int Fibonacci(int n)
+        {
+            if (n <= 1)
+            {
+                return n;
+            }
+            else
+            {
+                return (Fibonacci(n - 1) + Fibonacci(n - 2));
+            }
         }
     }
 }
